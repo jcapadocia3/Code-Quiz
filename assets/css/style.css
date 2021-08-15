@@ -8,15 +8,23 @@
 }
 
 .flex {
-    display: inline;
-    width: 200px;
+    display: block;
+    width: 140px;
 }
 
 #timer {
     position: absolute;
     text-align: right;
     top: -15px;
-    right: 0;
+    right: 10px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#score {
+    padding-left: 10px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #a1,
@@ -26,7 +34,7 @@
 #lets-begin {
     background-color: rgb(83, 10, 83);
     color: white;
-    margin: 10px;
+    margin: 2px;
     padding: 5px;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
