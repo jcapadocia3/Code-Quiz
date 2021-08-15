@@ -1,0 +1,54 @@
+.absolute {
+    position: relative;
+}
+
+.answers {
+    display: flex;
+    justify-content: center;
+}
+
+.flex {
+    display: inline;
+    width: 200px;
+}
+
+#timer {
+    position: absolute;
+    text-align: right;
+    top: -15px;
+    right: 0;
+}
+
+#a1,
+#a2,
+#a3,
+#a4, 
+#lets-begin {
+    background-color: rgb(83, 10, 83);
+    color: white;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#a1:hover,
+#a2:hover,
+#a3:hover,
+#a4:hover,
+#lets-begin:hover {
+    opacity: 70%;
+  }
+
+#big-words {
+    text-align: center;
+    margin-top: 150px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#small-words {
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
