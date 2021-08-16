@@ -2,7 +2,7 @@
     position: relative;
 }
 
-.answers {
+.multiple-choice {
     display: flex;
     justify-content: center;
 }
@@ -27,10 +27,10 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-#a1,
-#a2,
-#a3,
-#a4, 
+#answer1,
+#answer2,
+#answer3,
+#answer4, 
 #lets-begin {
     background-color: rgb(83, 10, 83);
     color: white;
@@ -40,10 +40,10 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-#a1:hover,
-#a2:hover,
-#a3:hover,
-#a4:hover,
+#answer1:hover,
+#answer2:hover,
+#answer3:hover, 
+#answer4:hover,
 #lets-begin:hover {
     opacity: 70%;
   }
