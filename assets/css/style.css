@@ -12,6 +12,24 @@
     width: 140px;
 }
 
+#breakpoint {
+    color: gray;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#goodjob {
+    color: gray;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#badjob {
+    color: gray;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 #timer {
     position: absolute;
     text-align: right;
@@ -37,6 +55,7 @@
     margin: 2px;
     padding: 5px;
     text-align: center;
+    border-radius: 15%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
