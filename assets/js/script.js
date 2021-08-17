@@ -1,9 +1,9 @@
 document.getElementById("lets-begin").addEventListener("click", countdown);
 var timeRemain = document.getElementById('timer');
 
-function countdown() {
+var timeLeft = 60;
 
-  var timeLeft = 10;
+function countdown() {
 
   var timeInterval = setInterval(function () {
     if (timeLeft > 1) {
@@ -26,36 +26,37 @@ document.getElementById("lets-begin").addEventListener("click", prepareQuiz);
 var question = document.getElementById("big-words")
 var hideSmall = document.getElementById("small-words")
 var hideStartQuiz = document.getElementById("lets-begin");
-var showAnswers = document.getElementById("answer1");
+var showAnswer1 = document.getElementById("answer1");
+var showAnswer2 = document.getElementById("answer2");
+var showAnswer3 = document.getElementById("answer3");
+var showAnswer4 = document.getElementById("answer4");
 
 function prepareQuiz() {
   question.textContent = "Question 1";
   hideSmall.style.display = "none";
   hideStartQuiz.style.display = "none";
-  showAnswers.style.display = "block";
+  showAnswer1.style.display = "block";
+  showAnswer2.style.display = "block";
+  showAnswer3.style.display = "block";
+  showAnswer4.style.display = "block";
 }
 
-var answer1 = document.getElementById("answer1").addEventListener("click", quizTime);
-// var answer2 = document.getElementById("answer2").addEventListener("click");
-// var answer3 = document.getElementById("answer3").addEventListener("click");
-// var answer4 = document.getElementById("answer4").addEventListener("click");
+var answer1 = document.getElementById("answer1").addEventListener("click", addPoint);
+var answer2 = document.getElementById("answer2").addEventListener("click", subTime);
+var answer3 = document.getElementById("answer3").addEventListener("click", subTime);
+var answer4 = document.getElementById("answer4").addEventListener("click", subTime);
 
-function quizTime() {
+var score = 0
 
-  var score = 0
+function addPoint() {
+  console.log("it works!");
+  score++;
+  console.log(score);
+  return true;
+}
 
-  if (answer1) {
-    console.log("it works!");
-    score++;
-    console.log(score)
- }
-//  if (entry) {
-//     console.log("entry");
-//  } 
-//  if (entry) {
-//     console.log("entry");
-//  } 
-//  if (entry) {
-//     console.log("entry");
-//  } 
+function subTime() {
+  console.log("it works!");
+  timeLeft-=3;
+  return false;
 }
