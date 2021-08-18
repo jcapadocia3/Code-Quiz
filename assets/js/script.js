@@ -195,4 +195,22 @@ function results() {
   question.textContent = "Fin!";
   hideSmall.style.display = "block";
   hideSmall.textContent = "You scored " + score + " out of 4!";
+  submitScore();
 }
+
+var enterInitText = document.getElementById("userinfo");
+var typeInit = document.getElementById("initials");
+var submitButt = document.getElementById("submitButt");
+
+function submitScore() {
+  enterInitText.style.display = "block";
+  typeInit.style.display = "block";
+  submitButt.style.display = "block";
+}
+
+var submitForm = document.getElementById("submitform");
+
+submitForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log("form submission success!");
+});

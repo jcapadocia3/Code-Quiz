@@ -2,7 +2,8 @@
     position: relative;
 }
 
-.multiple-choice {
+.multiple-choice, 
+.form {
     display: flex;
     justify-content: center;
 }
@@ -77,5 +78,23 @@
     text-align: center;
     margin-left: 150px;
     margin-right: 150px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#userinfo {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-right: 10px;
+}
+
+#initials {
+    margin-right: 10px;
+}
+
+#submitButt {
+    background-color: rgb(83, 10, 83);
+    color: white;
+    margin: 2px;
+    padding: 5px;
+    border-radius: 15%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
