@@ -70,7 +70,7 @@ function addPoint() {
 
 function subTime() {
   console.log("it works!");
-  timeLeft-=3;
+  timeLeft-=5;
   breakpoint.style.display = "block";
   wrongAns.style.display = "block";
   prepareQ2();
@@ -81,10 +81,10 @@ function prepareQ2() {
   answer2.removeEventListener("click", subTime);
   answer3.removeEventListener("click", subTime);
   answer4.removeEventListener("click", subTime);
-  answer1.addEventListener("click", subTime);
-  answer2.addEventListener("click", addPoint);
-  answer3.addEventListener("click", subTime);
-  answer4.addEventListener("click", subTime);
+  answer1.addEventListener("click", subTime1);
+  answer2.addEventListener("click", addPoint1);
+  answer3.addEventListener("click", subTime1);
+  answer4.addEventListener("click", subTime1);
   breakpoint.style.display = "none";
   wrongAns.style.display = "none";
   question.textContent = "Test Question 2";
@@ -92,4 +92,107 @@ function prepareQ2() {
   showAnswer2.textContent = "Test2 A2";
   showAnswer3.textContent = "Test2 A3";
   showAnswer4.textContent = "Test2 A4";
+}
+
+function addPoint1() {
+  console.log("it works!");
+  score++;
+  console.log(score);
+  breakpoint.style.display = "block";
+  correctAns.style.display = "block";
+  prepareQ3();
+}
+
+function subTime1() {
+  console.log("it works!");
+  timeLeft-=5;
+  breakpoint.style.display = "block";
+  wrongAns.style.display = "block";
+  prepareQ3();
+}
+
+function prepareQ3() {
+  answer1.removeEventListener("click", addPoint1);
+  answer2.removeEventListener("click", subTime1);
+  answer3.removeEventListener("click", subTime1);
+  answer4.removeEventListener("click", subTime1);
+  answer1.addEventListener("click", subTime2);
+  answer2.addEventListener("click", subTime2);
+  answer3.addEventListener("click", addPoint2);
+  answer4.addEventListener("click", subTime2);
+  breakpoint.style.display = "none";
+  wrongAns.style.display = "none";
+  question.textContent = "Test Question 3";
+  showAnswer1.textContent = "Test3 A1";
+  showAnswer2.textContent = "Test3 A2";
+  showAnswer3.textContent = "Test3 A3";
+  showAnswer4.textContent = "Test3 A4";
+}
+
+function addPoint2() {
+  console.log("it works!");
+  score++;
+  console.log(score);
+  breakpoint.style.display = "block";
+  correctAns.style.display = "block";
+  prepareQ4();
+}
+
+function subTime2() {
+  console.log("it works!");
+  timeLeft-=5;
+  breakpoint.style.display = "block";
+  wrongAns.style.display = "block";
+  prepareQ4();
+}
+
+function prepareQ4() {
+  answer1.removeEventListener("click", subTime2);
+  answer2.removeEventListener("click", subTime2);
+  answer3.removeEventListener("click", addPoint2);
+  answer4.removeEventListener("click", subTime2);
+  answer1.addEventListener("click", subTime3);
+  answer2.addEventListener("click", subTime3);
+  answer3.addEventListener("click", subTime3);
+  answer4.addEventListener("click", addPoint3);
+  breakpoint.style.display = "none";
+  wrongAns.style.display = "none";
+  question.textContent = "Test Question 4";
+  showAnswer1.textContent = "Test4 A1";
+  showAnswer2.textContent = "Test4 A2";
+  showAnswer3.textContent = "Test4 A3";
+  showAnswer4.textContent = "Test4 A4";
+}
+
+function addPoint3() {
+  console.log("it works!");
+  score++;
+  console.log(score);
+  breakpoint.style.display = "block";
+  correctAns.style.display = "block";
+  results();
+}
+
+function subTime3() {
+  console.log("it works!");
+  timeLeft-=5;
+  breakpoint.style.display = "block";
+  wrongAns.style.display = "block";
+  results();
+}
+
+function results() {
+  answer1.removeEventListener("click", subTime3);
+  answer2.removeEventListener("click", subTime3);
+  answer3.removeEventListener("click", subTime3);
+  answer4.removeEventListener("click", addPoint3);
+  showAnswer1.style.display = "none";
+  showAnswer2.style.display = "none";
+  showAnswer3.style.display = "none";
+  showAnswer4.style.display = "none";
+  breakpoint.style.display = "none";
+  wrongAns.style.display = "none";
+  question.textContent = "Fin!";
+  hideSmall.style.display = "block";
+  hideSmall.textContent = "You scored " + score + " out of 4!";
 }
