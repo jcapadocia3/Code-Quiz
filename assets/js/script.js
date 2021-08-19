@@ -1,10 +1,8 @@
-document.getElementById("lets-begin").addEventListener("click", countdown);
 var timeRemain = document.getElementById('timer');
-
 var timeLeft = 60;
 
 function countdown() {
-
+  timeLeft = 60;
   var timeInterval = setInterval(function () {
     if (timeLeft > 1) {
       timeRemain.textContent = timeLeft + ' seconds remaining';
@@ -20,8 +18,6 @@ function countdown() {
   }, 1000);
 }
 
-document.getElementById("lets-begin").addEventListener("click", prepareQ1);
-
 var question = document.getElementById("big-words")
 var hideSmall = document.getElementById("small-words")
 var hideStartQuiz = document.getElementById("lets-begin");
@@ -29,6 +25,15 @@ var showAnswer1 = document.getElementById("answer1");
 var showAnswer2 = document.getElementById("answer2");
 var showAnswer3 = document.getElementById("answer3");
 var showAnswer4 = document.getElementById("answer4");
+var answer1 = document.getElementById("answer1");
+var answer2 = document.getElementById("answer2");
+var answer3 = document.getElementById("answer3");
+var answer4 = document.getElementById("answer4");
+var breakpoint = document.getElementById("breakpoint");
+var correctAns = document.getElementById("goodjob");
+var wrongAns = document.getElementById("badjob");
+
+document.getElementById("lets-begin").addEventListener("click", prepareQ1);
 
 function prepareQ1() {
   question.textContent = "Test Question 1";
@@ -42,20 +47,13 @@ function prepareQ1() {
   showAnswer2.textContent = "Test1 A2";
   showAnswer3.textContent = "Test1 A3";
   showAnswer4.textContent = "Test1 A4";
+  answer1.addEventListener("click", addPoint);
+  answer2.addEventListener("click", subTime);
+  answer3.addEventListener("click", subTime);
+  answer4.addEventListener("click", subTime);
+  score = 0;
+  countdown();
 }
-
-var answer1 = document.getElementById("answer1");
-var answer2 = document.getElementById("answer2");
-var answer3 = document.getElementById("answer3");
-var answer4 = document.getElementById("answer4");
-var breakpoint = document.getElementById("breakpoint");
-var correctAns = document.getElementById("goodjob");
-var wrongAns = document.getElementById("badjob");
-
-answer1.addEventListener("click", addPoint);
-answer2.addEventListener("click", subTime);
-answer3.addEventListener("click", subTime);
-answer4.addEventListener("click", subTime);
 
 var score = 0
 
@@ -182,6 +180,7 @@ function subTime3() {
 }
 
 function results() {
+  
   answer1.removeEventListener("click", subTime3);
   answer2.removeEventListener("click", subTime3);
   answer3.removeEventListener("click", subTime3);
@@ -195,6 +194,7 @@ function results() {
   question.textContent = "Fin!";
   hideSmall.style.display = "block";
   hideSmall.textContent = "You scored " + score + " out of 4!";
+  timeLeft = 0;
   submitScore();
 }
 
@@ -234,4 +234,19 @@ function store(){
 
   localStorage.setItem("initials", JSON.stringify(old_data));
   localStorage.setItem("finalscore", JSON.stringify(old_data1));
+
+  playagain();
+};
+
+function playagain() {
+  question.textContent = "View High Scores";
+  hideStartQuiz.textContent = "Play Again!";
+  hideStartQuiz.style.display = "block";
+  showAnswer1.style.display = "block";
+  enterInitText.style.display = "none";
+  typeInit.style.display = "none";
+  submitButt.style.display = "none";
+  showAnswer1.textContent = "Clear High Scores";
+
+  document.getElementById("lets-begin").addEventListener("click", prepareQ1);
 };
