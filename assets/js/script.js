@@ -112,8 +112,8 @@ function subTime1() {
 }
 
 function prepareQ3() {
-  answer1.removeEventListener("click", addPoint1);
-  answer2.removeEventListener("click", subTime1);
+  answer1.removeEventListener("click", subTime1);
+  answer2.removeEventListener("click", addPoint1);
   answer3.removeEventListener("click", subTime1);
   answer4.removeEventListener("click", subTime1);
   answer1.addEventListener("click", subTime2);
@@ -210,7 +210,22 @@ function submitScore() {
 
 var submitForm = document.getElementById("submitform");
 
+
 submitForm.addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("form submission success!");
+  store()
 });
+
+function store(){
+  var new_data = document.getElementById("initials").value;
+
+  if (localStorage.getItem("data") == null){
+    localStorage.setItem("data", "[]");
+  }
+
+  var old_data = JSON.parse(localStorage.getItem("data"));
+  old_data.push(new_data);
+
+  localStorage.setItem("data", JSON.stringify(old_data));
+};
