@@ -220,12 +220,18 @@ submitForm.addEventListener("submit", (event) => {
 function store(){
   var new_data = document.getElementById("initials").value;
 
-  if (localStorage.getItem("data") == null){
-    localStorage.setItem("data", "[]");
+  if (localStorage.getItem("initials") == null){
+    localStorage.setItem("initials", "[]");
+  }
+  if (localStorage.getItem("finalscore") == null){
+    localStorage.setItem("finalscore", "[]");
   }
 
-  var old_data = JSON.parse(localStorage.getItem("data"));
+  var old_data = JSON.parse(localStorage.getItem("initials"));
   old_data.push(new_data);
+  var old_data1 = JSON.parse(localStorage.getItem("finalscore"));
+  old_data1.push(score);
 
-  localStorage.setItem("data", JSON.stringify(old_data));
+  localStorage.setItem("initials", JSON.stringify(old_data));
+  localStorage.setItem("finalscore", JSON.stringify(old_data1));
 };
