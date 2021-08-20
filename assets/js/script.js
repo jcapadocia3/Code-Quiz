@@ -1,25 +1,28 @@
-var timeRemain = document.getElementById('timer');
+// Function to execute a 30 second timer when appropriate
+var timeRemain = document.getElementById("timer");
 var timeLeft = 60;
 
 function countdown() {
   timeLeft = 60;
   var timeInterval = setInterval(function () {
     if (timeLeft > 1) {
-      timeRemain.textContent = timeLeft + ' seconds remaining';
+      timeRemain.textContent = timeLeft + " seconds remaining";
       timeLeft--;
     } else if (timeLeft === 1) {
-      timeRemain.textContent = timeLeft + ' second remaining';
+      timeRemain.textContent = timeLeft + " second remaining";
       timeLeft--;
     } else {
-      timeRemain.textContent = '';
       clearInterval(timeInterval);
       timeRemain.textContent = "Time's up!";
+      results();
     }
   }, 1000);
 }
 
-var question = document.getElementById("big-words")
-var hideSmall = document.getElementById("small-words")
+// Multiple variables used throughout the code to show
+// appropriate text/buttons when appropriate
+var question = document.getElementById("big-words");
+var hideSmall = document.getElementById("small-words");
 var hideStartQuiz = document.getElementById("lets-begin");
 var showAnswer1 = document.getElementById("answer1");
 var showAnswer2 = document.getElementById("answer2");
@@ -33,10 +36,13 @@ var breakpoint = document.getElementById("breakpoint");
 var correctAns = document.getElementById("goodjob");
 var wrongAns = document.getElementById("badjob");
 
+// Click event to call out necessary functions once the Quiz is started
 document.getElementById("lets-begin").addEventListener("click", prepareQ1);
 
+// Begin Question 1:
+// All necesary variables are adjusted to show question and buttons (answers) appropriately
+// All necessary event listeners/functions assigned
 function prepareQ1() {
-  question.textContent = "Test Question 1";
   hideSmall.style.display = "none";
   clear.style.display = "none";
   hideStartQuiz.style.display = "none";
@@ -44,10 +50,11 @@ function prepareQ1() {
   showAnswer2.style.display = "block";
   showAnswer3.style.display = "block";
   showAnswer4.style.display = "block";
-  showAnswer1.textContent = "Test1 A1";
-  showAnswer2.textContent = "Test1 A2";
-  showAnswer3.textContent = "Test1 A3";
-  showAnswer4.textContent = "Test1 A4";
+  question.textContent = "What tag defines a division or the beginning/end of an individual section in an HTML document?";
+  showAnswer1.textContent = "<div>";
+  showAnswer2.textContent = "<meta>";
+  showAnswer3.textContent = "<table>";
+  showAnswer4.textContent = "<img>";
   answer1.addEventListener("click", addPoint);
   answer2.addEventListener("click", subTime);
   answer3.addEventListener("click", subTime);
@@ -56,10 +63,12 @@ function prepareQ1() {
   countdown();
 }
 
-var score = 0
+// Variable to determine the score will start at "0"
+var score = 0;
 
+
+// Functions to be called on through the event listeners to "score++" and "time--"" depending on user choices
 function addPoint() {
-  console.log("it works!");
   score++;
   console.log(score);
   breakpoint.style.display = "block";
@@ -68,13 +77,15 @@ function addPoint() {
 }
 
 function subTime() {
-  console.log("it works!");
-  timeLeft-=5;
+  timeLeft -= 5;
   breakpoint.style.display = "block";
   wrongAns.style.display = "block";
   prepareQ2();
 }
 
+// Begin Question 2:
+// All necesary variables are adjusted to show question and buttons (answers) appropriately for Question 2
+// All necessary event listeners/functions are rewritten for "score++"" or "time--"" to function based on correct/incorrect answers for the new question
 function prepareQ2() {
   answer1.removeEventListener("click", addPoint);
   answer2.removeEventListener("click", subTime);
@@ -86,15 +97,14 @@ function prepareQ2() {
   answer4.addEventListener("click", subTime1);
   breakpoint.style.display = "none";
   wrongAns.style.display = "none";
-  question.textContent = "Test Question 2";
-  showAnswer1.textContent = "Test2 A1";
-  showAnswer2.textContent = "Test2 A2";
-  showAnswer3.textContent = "Test2 A3";
-  showAnswer4.textContent = "Test2 A4";
+  question.textContent = "What are the CSS properties that are used to add space around sections of content?";
+  showAnswer1.textContent = "Spacing";
+  showAnswer2.textContent = "Padding";
+  showAnswer3.textContent = "Break";
+  showAnswer4.textContent = "Cleaner";
 }
 
 function addPoint1() {
-  console.log("it works!");
   score++;
   console.log(score);
   breakpoint.style.display = "block";
@@ -103,13 +113,15 @@ function addPoint1() {
 }
 
 function subTime1() {
-  console.log("it works!");
-  timeLeft-=5;
+  timeLeft -= 5;
   breakpoint.style.display = "block";
   wrongAns.style.display = "block";
   prepareQ3();
 }
 
+// Begin Question 3:
+// All necesary variables are adjusted to show question and buttons (answers) appropriately for Question 3
+// All necessary event listeners/functions are rewritten for "score++"" or "time--"" to function based on correct/incorrect answers for the new question
 function prepareQ3() {
   answer1.removeEventListener("click", subTime1);
   answer2.removeEventListener("click", addPoint1);
@@ -121,15 +133,14 @@ function prepareQ3() {
   answer4.addEventListener("click", subTime2);
   breakpoint.style.display = "none";
   wrongAns.style.display = "none";
-  question.textContent = "Test Question 3";
-  showAnswer1.textContent = "Test3 A1";
-  showAnswer2.textContent = "Test3 A2";
-  showAnswer3.textContent = "Test3 A3";
-  showAnswer4.textContent = "Test3 A4";
+  question.textContent = "CSS stands for ____ Style Sheets.";
+  showAnswer1.textContent = "Concept";
+  showAnswer2.textContent = "Curious";
+  showAnswer3.textContent = "Cascading";
+  showAnswer4.textContent = "Concave";
 }
 
 function addPoint2() {
-  console.log("it works!");
   score++;
   console.log(score);
   breakpoint.style.display = "block";
@@ -138,13 +149,15 @@ function addPoint2() {
 }
 
 function subTime2() {
-  console.log("it works!");
-  timeLeft-=5;
+  timeLeft -= 5;
   breakpoint.style.display = "block";
   wrongAns.style.display = "block";
   prepareQ4();
 }
 
+// Begin Question 4:
+// All necesary variables are adjusted to show question and buttons (answers) appropriately for Question 4
+// All necessary event listeners/functions are rewritten for "score++"" or "time--"" to function based on correct/incorrect answers for the new question
 function prepareQ4() {
   answer1.removeEventListener("click", subTime2);
   answer2.removeEventListener("click", subTime2);
@@ -156,15 +169,14 @@ function prepareQ4() {
   answer4.addEventListener("click", addPoint3);
   breakpoint.style.display = "none";
   wrongAns.style.display = "none";
-  question.textContent = "Test Question 4";
-  showAnswer1.textContent = "Test4 A1";
-  showAnswer2.textContent = "Test4 A2";
-  showAnswer3.textContent = "Test4 A3";
-  showAnswer4.textContent = "Test4 A4";
+  question.textContent = "What tag is used to define the metadata about an HTML document, and must always be included inside the element?";
+  showAnswer1.textContent = "<img>";
+  showAnswer2.textContent = "<table>";
+  showAnswer3.textContent = "<div>";
+  showAnswer4.textContent = "<meta>";
 }
 
 function addPoint3() {
-  console.log("it works!");
   score++;
   console.log(score);
   breakpoint.style.display = "block";
@@ -173,15 +185,15 @@ function addPoint3() {
 }
 
 function subTime3() {
-  console.log("it works!");
-  timeLeft-=5;
+  timeLeft -= 5;
   breakpoint.style.display = "block";
   wrongAns.style.display = "block";
   results();
 }
 
+// Begin function to show results -- All event listeners and answer buttons are removed/hidden
+// Appropriate variable is adjusted to show the user's final score
 function results() {
-  
   answer1.removeEventListener("click", subTime3);
   answer2.removeEventListener("click", subTime3);
   answer3.removeEventListener("click", subTime3);
@@ -199,6 +211,7 @@ function results() {
   submitScore();
 }
 
+//  Begin required form submission variables and functions
 var enterInitText = document.getElementById("userinfo");
 var typeInit = document.getElementById("initials");
 var submitButt = document.getElementById("submitButt");
@@ -211,17 +224,16 @@ function submitScore() {
 
 var submitForm = document.getElementById("submitform");
 
-
 submitForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log("form submission success!");
   store();
 });
 
-function store(){
+// Begin function to store form submission data onto local storage
+function store() {
   var new_data = document.getElementById("initials").value;
 
-  if (localStorage.getItem("initials") == null){
+  if (localStorage.getItem("initials") == null) {
     localStorage.setItem("initials", "[]");
   }
 
@@ -232,9 +244,11 @@ function store(){
 
   showscores();
   playagain();
-};
+}
 
-var clear = document.getElementById("clearscores")
+// Begin function to pull locally stored data and show them on the web page
+// Begin event listener and function to clear locally stored data if the user chooses to do so
+var clear = document.getElementById("clearscores");
 
 function showscores() {
   var getscores = localStorage.getItem("initials");
@@ -251,7 +265,7 @@ function clearall() {
   hideSmall.style.display = "none";
 }
 
-
+// Begin function to run code from the beginning if user chooses to "Play Again"
 function playagain() {
   question.textContent = "Saved Scores";
   hideStartQuiz.textContent = "Play Again!";
@@ -261,4 +275,4 @@ function playagain() {
   submitButt.style.display = "none";
 
   document.getElementById("lets-begin").addEventListener("click", prepareQ1);
-};
+}
