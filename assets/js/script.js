@@ -1,4 +1,4 @@
-// Function to execute a 30 second timer when appropriate
+// Function to start a 60 second timer when appropriate
 var timeRemain = document.getElementById("timer");
 var timeLeft = 60;
 
@@ -19,8 +19,7 @@ function countdown() {
   }, 1000);
 }
 
-// Multiple variables used throughout the code to show
-// appropriate text/buttons when appropriate
+// Multiple variables used throughout and defined in the code to show/hide appropriate text fields/buttons when appropriate
 var question = document.getElementById("big-words");
 var hideSmall = document.getElementById("small-words");
 var hideStartQuiz = document.getElementById("lets-begin");
@@ -42,6 +41,7 @@ document.getElementById("lets-begin").addEventListener("click", prepareQ1);
 // Begin Question 1:
 // All necesary variables are adjusted to show question and buttons (answers) appropriately
 // All necessary event listeners/functions assigned
+// Call to begin 60 second timer
 function prepareQ1() {
   hideSmall.style.display = "none";
   clear.style.display = "none";

@@ -53,21 +53,6 @@
     startthequiz();
   }
   
-//   var codequiz = [
-//     { question: "TestQ1?\n(a) A1\n\(b) A1\n\(c) A1\n(d) A1",
-//       answer: "a"
-//     },
-//     { question: "TestQ2?\n(a) A2\n\(b) A2\n\(c) A2\n(d) A2",
-//       answer: "b"
-//     },
-//     { question: "TestQ3?\n(a) A3\n\(b) A3\n\(c) A3\n(d) A3",
-//       answer: "c"
-//     },
-//     { question: "TestQ4?\n(a) A4\n\(b) A4\n\(c) A4\n(d) A4",
-//       answer: "d"
-//     }
-//   ]
-
 function startthequiz() {
 
 var codequiz = [

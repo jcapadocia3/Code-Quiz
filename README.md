@@ -10,7 +10,7 @@ https://jcapadocia3.github.io/Code-Quiz/
 
 ## Final webpage project image:
 
-<img src="./assets/images/finalproduct.png" alt="Final product" width="500"/>
+<img src="./assets/images/finalproduct.png" alt="Final product" width="800"/>
 
 ## About Project
 
