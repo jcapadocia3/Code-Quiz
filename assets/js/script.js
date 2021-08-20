@@ -38,6 +38,7 @@ document.getElementById("lets-begin").addEventListener("click", prepareQ1);
 function prepareQ1() {
   question.textContent = "Test Question 1";
   hideSmall.style.display = "none";
+  clear.style.display = "none";
   hideStartQuiz.style.display = "none";
   showAnswer1.style.display = "block";
   showAnswer2.style.display = "block";
@@ -214,7 +215,7 @@ var submitForm = document.getElementById("submitform");
 submitForm.addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("form submission success!");
-  store()
+  store();
 });
 
 function store(){
@@ -223,30 +224,41 @@ function store(){
   if (localStorage.getItem("initials") == null){
     localStorage.setItem("initials", "[]");
   }
-  if (localStorage.getItem("finalscore") == null){
-    localStorage.setItem("finalscore", "[]");
-  }
 
   var old_data = JSON.parse(localStorage.getItem("initials"));
-  old_data.push(new_data);
-  var old_data1 = JSON.parse(localStorage.getItem("finalscore"));
-  old_data1.push(score);
+  old_data.push(new_data + ": " + score);
 
   localStorage.setItem("initials", JSON.stringify(old_data));
-  localStorage.setItem("finalscore", JSON.stringify(old_data1));
 
+  showscores();
   playagain();
 };
 
+var clear = document.getElementById("clearscores")
+
+function showscores() {
+  var getscores = localStorage.getItem("initials");
+  var logscores = JSON.parse(getscores);
+  console.log(logscores);
+  hideSmall.textContent = logscores;
+
+  clear.style.display = "block";
+  clear.addEventListener("click", clearall);
+}
+
+function clearall() {
+  localStorage.clear();
+  hideSmall.style.display = "none";
+}
+
+
 function playagain() {
-  question.textContent = "View High Scores";
+  question.textContent = "Saved Scores";
   hideStartQuiz.textContent = "Play Again!";
   hideStartQuiz.style.display = "block";
-  showAnswer1.style.display = "block";
   enterInitText.style.display = "none";
   typeInit.style.display = "none";
   submitButt.style.display = "none";
-  showAnswer1.textContent = "Clear High Scores";
 
   document.getElementById("lets-begin").addEventListener("click", prepareQ1);
 };

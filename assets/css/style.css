@@ -31,11 +31,18 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-#timer {
+/* #timer {
     position: absolute;
     text-align: right;
     top: -15px;
     right: 10px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} */
+
+#timer {
+    top: 15px;
+    margin-left: 10px;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -50,7 +57,8 @@
 #answer2,
 #answer3,
 #answer4, 
-#lets-begin {
+#lets-begin,
+#clearscores {
     background-color: rgb(83, 10, 83);
     color: white;
     margin: 2px;
