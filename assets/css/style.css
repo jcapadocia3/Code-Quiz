@@ -31,24 +31,9 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-/* #timer {
-    position: absolute;
-    text-align: right;
-    top: -15px;
-    right: 10px;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-} */
-
 #timer {
     top: 15px;
     margin-left: 10px;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-#score {
-    padding-left: 10px;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

@@ -73,6 +73,7 @@ function addPoint() {
   console.log(score);
   breakpoint.style.display = "block";
   correctAns.style.display = "block";
+  wrongAns.style.display = "none";
   prepareQ2();
 }
 
@@ -80,6 +81,7 @@ function subTime() {
   timeLeft -= 5;
   breakpoint.style.display = "block";
   wrongAns.style.display = "block";
+  correctAns.style.display = "none";
   prepareQ2();
 }
 
@@ -95,8 +97,6 @@ function prepareQ2() {
   answer2.addEventListener("click", addPoint1);
   answer3.addEventListener("click", subTime1);
   answer4.addEventListener("click", subTime1);
-  breakpoint.style.display = "none";
-  wrongAns.style.display = "none";
   question.textContent = "What are the CSS properties that are used to add space around sections of content?";
   showAnswer1.textContent = "Spacing";
   showAnswer2.textContent = "Padding";
@@ -109,6 +109,7 @@ function addPoint1() {
   console.log(score);
   breakpoint.style.display = "block";
   correctAns.style.display = "block";
+  wrongAns.style.display = "none";
   prepareQ3();
 }
 
@@ -116,6 +117,7 @@ function subTime1() {
   timeLeft -= 5;
   breakpoint.style.display = "block";
   wrongAns.style.display = "block";
+  correctAns.style.display = "none";
   prepareQ3();
 }
 
@@ -131,8 +133,6 @@ function prepareQ3() {
   answer2.addEventListener("click", subTime2);
   answer3.addEventListener("click", addPoint2);
   answer4.addEventListener("click", subTime2);
-  breakpoint.style.display = "none";
-  wrongAns.style.display = "none";
   question.textContent = "CSS stands for ____ Style Sheets.";
   showAnswer1.textContent = "Concept";
   showAnswer2.textContent = "Curious";
@@ -145,6 +145,7 @@ function addPoint2() {
   console.log(score);
   breakpoint.style.display = "block";
   correctAns.style.display = "block";
+  wrongAns.style.display = "none";
   prepareQ4();
 }
 
@@ -152,6 +153,7 @@ function subTime2() {
   timeLeft -= 5;
   breakpoint.style.display = "block";
   wrongAns.style.display = "block";
+  correctAns.style.display = "none";
   prepareQ4();
 }
 
@@ -167,8 +169,6 @@ function prepareQ4() {
   answer2.addEventListener("click", subTime3);
   answer3.addEventListener("click", subTime3);
   answer4.addEventListener("click", addPoint3);
-  breakpoint.style.display = "none";
-  wrongAns.style.display = "none";
   question.textContent = "What tag is used to define the metadata about an HTML document, and must always be included inside the element?";
   showAnswer1.textContent = "<img>";
   showAnswer2.textContent = "<table>";
@@ -181,6 +181,7 @@ function addPoint3() {
   console.log(score);
   breakpoint.style.display = "block";
   correctAns.style.display = "block";
+  wrongAns.style.display = "none";
   results();
 }
 
@@ -188,6 +189,7 @@ function subTime3() {
   timeLeft -= 5;
   breakpoint.style.display = "block";
   wrongAns.style.display = "block";
+  correctAns.style.display = "none";
   results();
 }
 
@@ -202,8 +204,6 @@ function results() {
   showAnswer2.style.display = "none";
   showAnswer3.style.display = "none";
   showAnswer4.style.display = "none";
-  breakpoint.style.display = "none";
-  wrongAns.style.display = "none";
   question.textContent = "Fin!";
   hideSmall.style.display = "block";
   hideSmall.textContent = "You scored " + score + " out of 4!";
@@ -227,6 +227,9 @@ var submitForm = document.getElementById("submitform");
 submitForm.addEventListener("submit", (event) => {
   event.preventDefault();
   store();
+  breakpoint.style.display = "none";
+  wrongAns.style.display = "none";
+  correctAns.style.display = "none";
 });
 
 // Begin function to store form submission data onto local storage

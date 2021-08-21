@@ -54,7 +54,6 @@
   }
   
 function startthequiz() {
-
 var codequiz = [
     { question: "TestQ1?",
       answer: answer1.addEventListener("click", addPoint)
