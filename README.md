@@ -25,3 +25,7 @@ This project is intended to present a user with a timed Quiz that includes a res
 - While the time is running, the user will be presented with one question at a time, in which they will have 4 separate buttons to click that will contain the possible answers they can select. Depending on the answer that the user clicks, their score will either increase by 1 or 5 seconds will be reduced from the time remaining for the Quiz to be completed. Also, once an answer is selected, the Quiz will automatically move to the next question until either the timer has run down to 0 seconds or the user has answered all of the questions in the Quiz.
 
 - Once the Quiz is finished, the user will be presented with their final score and a required submission form to complete in which they will enter their initials to have their score saved. The user will then be able to see a list of scores saved from other completions and will have the option to replay the Quiz or clear the scores that are saved.
+
+
+## License
+- Licensed under the [MIT License](LICENSE)
